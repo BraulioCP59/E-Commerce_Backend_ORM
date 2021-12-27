@@ -160,7 +160,7 @@ Your database should contain the following four models, including the requiremen
     * Integer.
 
     * References the `Tag` model's `id`.
-
+<!-- 
 ### Associations
 
 You'll need to execute association methods on your Sequelize models to create the following relationships between them:
@@ -169,7 +169,9 @@ You'll need to execute association methods on your Sequelize models to create th
 
 * `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
 
-> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
+> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models. -->
+
+
 
 ### Fill Out the API Routes to Perform RESTful CRUD Operations
 
@@ -179,6 +181,10 @@ Note that the functionality for creating the many-to-many relationship for produ
 
 > **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
 
+
+
+
+
 ### Seed the Database
 
 After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
@@ -186,6 +192,13 @@ After creating the models and routes, run `npm run seed` to seed data to your da
 ### Sync Sequelize to the Database on Server Start
 
 Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
+
+
+
+
+
+
+
 
 
 ### Walkthrough Video: 37%
