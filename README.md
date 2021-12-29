@@ -183,11 +183,9 @@ Note that the functionality for creating the many-to-many relationship for produ
 
 
 
+<!-- ### Seed the Database
 
-
-### Seed the Database
-
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
+After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes. -->
 
 ### Sync Sequelize to the Database on Server Start
 
