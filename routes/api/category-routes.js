@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try
   {
-    const newCategory = Category.create(req.body);
+    const newCategory = await Category.create(req.body);
 
     res.status(201).json(newCategory);
     console.log("New Category Has Been Created Successfully! \n", newCategory);
@@ -66,7 +66,7 @@ router.put('/:id', async (req, res) => {
       },
     });
 
-    res.status(200).json(updatedCategory);
+    res.status(204).send('Category Has Been Successfully Updated!');
     console.log("Category Has Been Successfully Updated!\n", updatedCategory);
 
   }catch(err)
@@ -86,7 +86,7 @@ router.delete('/:id', async (req, res) => {
       },
     });
 
-    res.status(200).json(deletedCategory);
+    res.status(204).json(deletedCategory);
     console.log("The Following Category Has Been Destroyed: \n", deletedCategory);
 
   }catch(err)

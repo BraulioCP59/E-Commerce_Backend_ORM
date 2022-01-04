@@ -92,7 +92,7 @@ router.put('/:id', async (req, res) => {
     })
 
     //finds all associated products from ProductTag
-    const relatedProducts = await Product.findAll({
+    const relatedProducts = await ProductTag.findAll({
       where: {
         tag_id: req.params.id,
       },
@@ -120,9 +120,9 @@ router.put('/:id', async (req, res) => {
     const updatedResults = Promise.all([
       Tag.destroy({where: {id: productTagsToRemove} }),
       Tag.bulkCreate(newProductTags),
-    ]);
+    ])
 
-    res.status(200).json(updatedResults);
+    res.status(204).send('Tag Has Been Successfully Updated!');
     console.log("Updated Results Here!\n", updatedResults)
 
   }catch(err)
@@ -141,7 +141,7 @@ router.delete('/:id', async (req, res) => {
       }
     });
 
-    res.status(200).json(deletedTag);
+    res.status(204).json(deletedTag);
     console.log("The Following has been Destroyed: \n", deletedTag);
 
   }catch(err)

@@ -108,7 +108,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.status(204).json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
@@ -124,7 +124,7 @@ router.delete('/:id', async (req, res) => {
       }
     });
 
-    res.status(200).json(deletedProduct);
+    res.status(204).json(deletedProduct);
     console.log("The Following has been Destroyed: \n", deletedProduct);
     
   }catch {
