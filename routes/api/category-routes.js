@@ -78,12 +78,13 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
+  console.log("Logging from line 83!!!!!!!!!!");
   try
   {
     const deletedCategory = await Category.destroy({
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
 
     res.status(204).json(deletedCategory);
@@ -95,5 +96,6 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
